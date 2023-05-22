@@ -8,6 +8,7 @@ mongoose.connect(process.env.MONGO_URL)
 const app = express()
 app.use(express.json())
 app.use(cors())
+app.use(express.static("publish"))
 
 app.post("/api/todo/add", addTodo)
 app.get("/api/todo", getTodos)
